@@ -11,7 +11,6 @@ file_path =  f"{sys.argv[1]}"
 #Open and parse csv file given as argument + create a global inventory
 item_dict = {}
 inv_list = []
-
 def csv_parser(file_path):
     with open(file_path, newline = '') as csvfile:
         reader = csv.reader(csvfile)
