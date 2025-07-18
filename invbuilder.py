@@ -14,8 +14,7 @@ def get_item_id(item):
 def get_item_value(item):
     pass
 
-
-
+#Open and parse csv file given as argument + create a global inventory
 def csv_parser(file_path):
     with open(file_path, newline = '') as csvfile:
         reader = csv.reader(csvfile)
