@@ -3,7 +3,7 @@ import csv, sys, requests, json, pandas as pd
 #Global Variables
 def init():
     global version
-    version = "0.0.3"
+    version = "0.0.5"
 
     global file_path
     file_path = f"{sys.argv[1]}"
