@@ -20,5 +20,5 @@ UI?
 Dependencies: 
 pandas (pip install pandas)
 
-Input file should be a 
+Input file should be a csv file.
 To use: run "python3 main.py <path to file>" within wfmhelper directory.
