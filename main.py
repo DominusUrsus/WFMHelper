@@ -84,6 +84,7 @@ def get_blueprint_status(item):
 #iterate over settings.bp_list, call get_set_parts, for all sets that return true, call get_set_count
 def set_builder():
     #print(f"Debug: set_building running with list {settings.bp_list}")
+    print("Retrieving set data from WFM API and calculating existing sets.")
     for slug_to_check in settings.bp_list:
         #print(f"Debug: Current check {slug_to_check}")
         if get_set_status(slug_to_check) == True:
