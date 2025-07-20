@@ -99,7 +99,7 @@ def get_set_status(slug_to_check):
         #print(f"Attempting get request to {api_set_request}")
         settings.set_item_dump = requests.get(api_set_request)
         settings.set_item_dump.raise_for_status()
-        #with open("wfm-set-item-dump.json", 'w') as file:
+        with open("wfm-set-item-dump.json", 'w') as file:
             json.dump(settings.set_item_dump.json(), file, indent = 4)
             #print(f"Received set_item data. Storing data in wfm-set-item-dump.json")
         #print(f"Debug set_item_dump dict: ")
