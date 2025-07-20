@@ -41,7 +41,7 @@ def get_item_id(item):
         print(f"KeyError: Column {e} not found in settings.items_df. Available columns: {settings.items_df.columns.tolist()}")
         return None
     except IndexError as e:
-        print(f"IndexError: Check for correct spelling of item: ({item}) in csv file? Adding to typo_list. Error: {e}")
+        print(f"IndexError: Could not get item id for {item}, check for typos")
         settings.typo_list.append(item)
     except Exception as e:
         print(f"Error in get_item_id: {e}")
@@ -59,7 +59,7 @@ def get_item_slug(item):
         print(f"KeyError: Column {e} not found in settings.items_df. Available columns: {settings.items_df.columns.tolist()}")
         return None
     except IndexError as e:
-        print(f"IndexError: Check for correct spelling of item: ({item}) in csv file? Error: {e}")
+        print(f"IndexError: Could not get item slug for {item}, check for typos")
     except Exception as e:
         print(f"Error in get_item_slug: {e}")
         return None
@@ -79,7 +79,7 @@ def get_blueprint_status(item):
             print(f"Error checking if {item} IS blueprint and NOT warframe component")
             return False
     except IndexError as e:
-        print(f"IndexError: Check for correct spelling of item: ({item}) in csv file? Error: {e}")
+        print(f"IndexError: Could not get blueprint status for {item}, check for typos")
 
 #iterate over settings.bp_list, call get_set_parts, for all sets that return true, call get_set_count
 def set_builder():
@@ -283,7 +283,7 @@ def main():
     print(f"WFMHelper version: {settings.version}")
     init_wfm_api()
     convert_item_dataframe()
-    print(f"----------Checking inventory with path: {settings.file_path} -----------")
+    print(f"--------- Checking inventory with path: {settings.file_path} ---------")
     csv_parser(settings.file_path)
     print("---------------------- Inventory parsed ---------------------")
 
