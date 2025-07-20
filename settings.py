@@ -1,10 +1,9 @@
 import csv, sys, requests, json, pandas as pd
-from pyrate_limiter import Duration, Rate, Limiter, BucketFullException, InMemoryBucket, LimiterDelayException
 
 #Global Variables
 def init():
     global version
-    version = "0.0.5"
+    version = "0.0.9"
 
     global file_path
     file_path = f"{sys.argv[1]}"
@@ -19,12 +18,10 @@ def init():
     global set_item_dump
     global items_df
     global json_path
+    global set_data
     global set_list
     global set_root_item_id
     global bp_list
-    global rate
-    global api_bucket
-    global rate_limiter
     
     item_dict = {}
     inv_list = []
@@ -35,7 +32,5 @@ def init():
     json_path = "./wfm-api-item-dump.json"
     set_list = []
     set_root_item_id = None
+    set_data = None
     bp_list = []
-    rate = Rate(3, Duration.SECOND *1)
-    api_bucket = InMemoryBucket([rate])
-    rate_limiter = Limiter(api_bucket)

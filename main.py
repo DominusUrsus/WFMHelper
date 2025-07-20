@@ -1,5 +1,4 @@
 import csv, sys, requests, json, pandas as pd, settings
-from pyrate_limiter import Duration, Rate, Limiter, BucketFullException, InMemoryBucket, LimiterDelayException
 
 #Check start args or error out
 if len(sys.argv) != 2:
@@ -83,13 +82,11 @@ def get_blueprint_status(item):
 
 #iterate over settings.bp_list, call get_set_parts, for all sets that return true, call get_set_count
 def set_builder():
-
+    print(f"Debug: set_building running with list {settings.bp_list}")
     for slug_to_check in settings.bp_list:
         #print(f"Debug: Current check {slug_to_check}")
         if get_set_status(slug_to_check) == True:
-            get_set_parts(slug_to_check)
-            #get_set_count(set_to_check)
-
+            pass
 
 #Check what other parts are against api set check with slug, check existence of all item_ids in settings.inv_list, return True if all present
 #API call is from this function - apply rate limit - WFM API rate limit = 3 req/sec
@@ -105,22 +102,17 @@ def get_set_status(slug_to_check):
             json.dump(settings.set_item_dump.json(), file, indent = 4)
             print(f"Received set_item data. Storing data in wfm-set-item-dump.json")
         #print(f"Debug set_item_dump dict: ")
-
     except TypeError:
         print("TypeError: Received TypeError for get_set_status: Likely a list in item_dict, debug later")
-    except BucketFullException as e:
-        print(e)
-        print(e.meta_info)
 
     with open("wfm-set-item-dump.json", "r") as file:
-            set_data = json.load(file)
+            settings.set_data = json.load(file)
 
-    
-    comp_list = set_data["data"]["items"][0]["setParts"]
+    comp_list = settings.set_data["data"]["items"][0]["setParts"]
 
     id_for_check = None
     id_check_list = []
-    set_root = set_data["data"]["items"][0]["setRoot"]
+    set_root = settings.set_data["data"]["items"][0]["setRoot"]
     #print(f"Debug: set_root = {set_root}")
 
     for dict_check in settings.inv_list:
@@ -128,33 +120,89 @@ def get_set_status(slug_to_check):
             id_for_check = dict_check["item_id"]
             id_check_list.append(id_for_check)
 
-    #Remove item set id
+
+            comp_list.sort()
+            id_check_list.sort()
+
     for comp_item in comp_list:
-        for item_root in set_data["data"]["items"]:
+        for item_root in settings.set_data["data"]["items"]:
             if item_root["id"] == comp_item and item_root["setRoot"] is True:
-                comp_list.remove(comp_item)
                 settings.set_root_item_id = comp_item
-                settings.set_list.append(settings.set_root_item_id)
-                get_set_parts(comp_list, item_root)
-                #print("Somehow this worked")
+                comp_list.remove(comp_item)
         
-    comp_list.sort()
-    id_check_list.sort()
-    #print(f"Debug: Current set_status: {id_check_list == comp_list} and set_id: {settings.set_root_item_id}")
-    return id_check_list == comp_list
-
-
+    #print(f"Current list comparison {id_check_list} | {comp_list}")
+    #print(f"-----\nDebug: Current set_status: {id_check_list == comp_list} and set_id: {settings.set_root_item_id}\n------")
+    if id_check_list == comp_list:
+        get_set_parts(comp_list, settings.set_root_item_id)
+        
+        settings.set_list.append(settings.set_root_item_id)
+        
 #If get_set_status resolves to true, return list of IDs back to set_builder
 def get_set_parts(set_item_list, set_item_id):
+    temp_name = None
+    temp_slug = None
+    print(f"Debug: get_set_parts running with args: {set_item_list} + {set_item_id}")
     #Update settings.inv_list to reflect sets instead of individual parts
-    print("Nothing here yet")
-    return set_item_list
+    for item_root in settings.set_data["data"]["items"]:
+        if item_root["id"] == set_item_id:
+            #print(f"Debug: get_set_parts check item {item_root["id"]}")
+
+            #temp_name = settings.set_data["data"]["items"] == [item_root]["i18n"]["en"]["name"]
+            temp_name = item_root["i18n"]["en"]["name"]
+            temp_slug = item_root["slug"]
+            #print(f"Debug: temp_name {temp_name}")
+            set_dict = {
+                "item": temp_name,
+                "count": get_set_count(set_item_list),
+                "item_slug": temp_slug,
+                "item_id": set_item_id,
+                "is_bp": False
+            }
+            #print(f"------------------\nDebug: set_dict: {set_dict}\n------------------")
+            settings.inv_list.append(set_dict)
+            #print(f"------------------\nDebug: inv_list: {settings.inv_list}\n------------------")
+
+    pass
 
 #Call when set_builder resolves true, check amount of each item for the set we have in settings.inv_list
-def get_set_count(item):
-    #Check against quantityInSet
-    #Check that items evenly divide if greater than quantityInSet
-    pass
+def get_set_count(set_item_list):
+    print(f"Debug: running get_set_count")
+    min_count = 1000
+    list_to_del = []
+    item_sets = {}
+
+    #Iterate over set_item_list and inv_list, calculate how many sets we can make
+    for item in set_item_list:
+        for key in settings.inv_list[:]:
+            if item == key["item_id"]:
+                #print(f"Debug: Checking item: {key["item_slug"]} count: {key["count"]}")
+                for item_count in settings.set_data["data"]["items"]:
+                    if "quantityInSet" in item_count:
+                        sets_possible = key["count"] // item_count["quantityInSet"]
+                        item_sets[item] = sets_possible
+
+    if item_sets:
+        min_count = min(item_sets.values())                        
+    
+    #iterate over lists again, add parts that become sets, and delete deprecated parts
+    for item in set_item_list:
+        for key in settings.inv_list[:]:
+            if item == key["item_id"]:
+                for item_count in settings.set_data["data"]["items"]:
+                    if item_count["id"] == item and "quantityInSet" in item_count:
+                        items_used = min_count * item_count["quantityInSet"]
+                        key["count"] -= items_used
+                        #print(f"**Debug**: Checking item prep for del: {key["item_slug"]} count: {key["count"]}")
+                        if key["count"] == 0:
+                            #print(f"&&Debug$$: Checking item prep for del: {key["item_slug"]} count: {key["count"]}")
+                            list_to_del.append(key)
+                            #print(f"Debug: Prepare to remove dicts: {key}\nDebug: list to del {list_to_del}")
+
+
+    
+    for part_dict in list_to_del:
+        settings.inv_list.remove(part_dict)
+    return min_count if min_count != 1000 else 1
 
 def get_item_value(item):
     pass
@@ -171,16 +219,19 @@ def correct_item_name (item):
 def csv_parser(file_path):
     global item_name
     with open(settings.file_path, newline = '') as csvfile:
-        reader = csv.reader(csvfile)
+        capital_stream = (line.title() for line in csvfile)
+        reader = csv.reader(capital_stream)
+
         next(reader)
+
+        #Name fixer causes sentinels to break
         prime_parts_key = ["Chassis", "Neuroptics", "Systems"]
         for row in reader:
             #Checking if WF parts names contain Blueprint
-            if any(keyword in row[0] for keyword in prime_parts_key) and "Blueprint" not in row[0]:
-                item_name = correct_item_name(row[0])
+            if any(keyword in row[0] for keyword in prime_parts_key) and "blueprint" not in row[0]:
+                item_name = correct_item_name(row[0].title())
             else:
-                item_name = row[0]
-                #print(f"Debug: Incorrect item name for: {row[0]}")
+                item_name = row[0].title()
 
             #CSV Returns each row as a list, index and add values to keys based on info
             settings.item_dict = {
@@ -190,12 +241,9 @@ def csv_parser(file_path):
                 "item_id": get_item_id(item_name),
                 "is bp": get_blueprint_status (item_name)
             }
-            #Call set_builder if current item is a blueprint
-            #if settings.item_dict["is bp"] == True:
-                #set_builder(settings.item_dict["item_slug"])
-            #print(f"Debug: settings.item_dict: {settings.item_dict}")
+
             settings.inv_list.append(settings.item_dict)
-    #print(f"Debug: Loop Fin - Inventory list:{settings.inv_list}")
+
     return settings.inv_list
 
 def main():
@@ -205,8 +253,14 @@ def main():
     convert_item_dataframe()
     print(f"----------Checking inventory with path: {settings.file_path} -----------")
     csv_parser(settings.file_path)
-    print("---------------------- Inventory parsed ----------------------")
+    print("---------------------- Inventory parsed ---------------------")
     print("---------------------- Checking for sets --------------------")
     set_builder()
+    print("----------------- Completed. Outputting file. ---------------")
+    output_file = open("test_output.json", "w", encoding='utf-8')
+    for line in settings.inv_list:
+        json.dump(line, output_file)
+        output_file.write("\n")
+    print("---------- Output file saved to ./test_output.json ----------")
 
 main()

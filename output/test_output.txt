@@ -1,0 +1,129 @@
+{"item": "Acceltra Prime Barrel", "count": 1, "item_slug": "acceltra_prime_barrel", "item_id": "65a7fcc4ed5b0d2e3eb462d0", "is bp": false}
+{"item": "Acceltra Prime Receiver", "count": 2, "item_slug": "acceltra_prime_receiver", "item_id": "65a7fcc4ed5b0d2e3eb462d1", "is bp": false}
+{"item": "Acceltra Prime Stock", "count": 3, "item_slug": "acceltra_prime_stock", "item_id": "65a7fcc4ed5b0d2e3eb462d2", "is bp": false}
+{"item": "Akarius Prime Link", "count": 1, "item_slug": "akarius_prime_link", "item_id": "65a7fca4ed5b0d2e3eb462cd", "is bp": false}
+{"item": "Akarius Prime Receiver", "count": 1, "item_slug": "akarius_prime_receiver", "item_id": "65a7fca4ed5b0d2e3eb462cc", "is bp": false}
+{"item": "Akbolto Prime Barrel", "count": 1, "item_slug": "akbolto_prime_barrel", "item_id": "5a311f85c2c9e90dfff475f7", "is bp": false}
+{"item": "Aksomati Prime Barrel", "count": 1, "item_slug": "aksomati_prime_barrel", "item_id": "5df955141456970150510f2a", "is bp": false}
+{"item": "Banshee Prime Chassis Blueprint", "count": 1, "item_slug": "banshee_prime_chassis_blueprint", "item_id": "58b57068eb26db5c3119210c", "is bp": false}
+{"item": "Baruuk Prime Systems Blueprint", "count": 1, "item_slug": "baruuk_prime_systems_blueprint", "item_id": "639a8d9374b02f003889eb7e", "is bp": false}
+{"item": "Boltor Prime Stock", "count": 1, "item_slug": "boltor_prime_stock", "item_id": "54a73e65e779893a797fff31", "is bp": false}
+{"item": "Braton Prime Barrel", "count": 1, "item_slug": "braton_prime_barrel", "item_id": "54a73e65e779893a797fff32", "is bp": false}
+{"item": "Braton Prime Stock", "count": 1, "item_slug": "braton_prime_stock", "item_id": "54a73e65e779893a797fff35", "is bp": false}
+{"item": "Bronco Prime Barrel", "count": 1, "item_slug": "bronco_prime_barrel", "item_id": "54a73e65e779893a797fff36", "is bp": false}
+{"item": "Burston Prime Barrel", "count": 1, "item_slug": "burston_prime_barrel", "item_id": "54a73e65e779893a797fff39", "is bp": false}
+{"item": "Cedo Prime Barrel", "count": 1, "item_slug": "cedo_prime_barrel", "item_id": "67acd8fd125398d92c8bb4e2", "is bp": false}
+{"item": "Daikyu Prime Grip", "count": 1, "item_slug": "daikyu_prime_grip", "item_id": "682dfb5735715d4f3e9c64f0", "is bp": false}
+{"item": " Daikyu Prime String", "count": 1, "item_slug": null, "item_id": null, "is bp": null}
+{"item": "Destreza Prime Blade", "count": 1, "item_slug": "destreza_prime_blade", "item_id": "5b2985e0eb069f04ea65b0d8", "is bp": false}
+{"item": "Dethcube Prime Systems Blueprint", "count": 2, "item_slug": null, "item_id": null, "is bp": null}
+{"item": "Dual Zoren Prime Blade", "count": 1, "item_slug": "dual_zoren_prime_blade", "item_id": "67acd915125398d92c8bb4e8", "is bp": false}
+{"item": "Dual Zoren Prime HAndle", "count": 1, "item_slug": null, "item_id": null, "is bp": null}
+{"item": "Ember Prime CHassis", "count": 1, "item_slug": null, "item_id": null, "is bp": null}
+{"item": "Epitaph Prime Receiver", "count": 1, "item_slug": "epitaph_prime_receiver", "item_id": "66c60c2766bbb2aedca695a6", "is bp": false}
+{"item": "Euphone Prime Barrel", "count": 1, "item_slug": null, "item_id": null, "is bp": null}
+{"item": "Frost Prime Systems Blueprint", "count": 2, "item_slug": "frost_prime_systems_blueprint", "item_id": "54a73e65e779893a797fff79", "is bp": false}
+{"item": "Fulmin Prime Receiver", "count": 2, "item_slug": "fulmin_prime_receiver", "item_id": "64c2aa1666456704eba6ba46", "is bp": false}
+{"item": "Gara Prime Chassis Blueprint", "count": 1, "item_slug": "gara_prime_chassis_blueprint", "item_id": "60ad4a1df1904300d012c70e", "is bp": false}
+{"item": "Gara Prime Systems Blueprint", "count": 1, "item_slug": "gara_prime_systems_blueprint", "item_id": "60ad4a1cf1904300d012c703", "is bp": false}
+{"item": "Garuda Prime Chassis Blueprint", "count": 1, "item_slug": "garuda_prime_chassis_blueprint", "item_id": "6242037666a58f0108c3d479", "is bp": false}
+{"item": "Garuda Prime Neuroptics Blueprint", "count": 1, "item_slug": "garuda_prime_neuroptics_blueprint", "item_id": "6242037766a58f0108c3d492", "is bp": false}
+{"item": "Gauss Prime Neuroptics Blueprint", "count": 2, "item_slug": "gauss_prime_neuroptics_blueprint", "item_id": "65a7fc5aed5b0d2e3eb462b4", "is bp": false}
+{"item": "Gauss Prime Systems Blueprint", "count": 1, "item_slug": "gauss_prime_systems_blueprint", "item_id": "65a7fc5aed5b0d2e3eb462b6", "is bp": false}
+{"item": "Glaive Prime BLade", "count": 3, "item_slug": null, "item_id": null, "is bp": null}
+{"item": "Grendel Prime Chassis Blueprint", "count": 4, "item_slug": "grendel_prime_chassis_blueprint", "item_id": "653060f332327ba8746da747", "is bp": false}
+{"item": "GRendel Prime SYstems", "count": 1, "item_slug": null, "item_id": null, "is bp": null}
+{"item": "Gunsen Prime BLade", "count": 1, "item_slug": null, "item_id": null, "is bp": null}
+{"item": "Harrow Prime Neuroptics Blueprint", "count": 2, "item_slug": "harrow_prime_neuroptics_blueprint", "item_id": "61bb64fd3132ff00482b5fc4", "is bp": false}
+{"item": "Hildryun Prime Systems Blueprint", "count": 1, "item_slug": null, "item_id": null, "is bp": null}
+{"item": "Hydroid Prime CHassis", "count": 2, "item_slug": null, "item_id": null, "is bp": null}
+{"item": "Hydroid Prime Neuroptics Blueprint", "count": 1, "item_slug": "hydroid_prime_neuroptics_blueprint", "item_id": "59a48b625cd9938cfede7039", "is bp": false}
+{"item": "Hystrix Prime Barrel", "count": 1, "item_slug": "hystrix_prime_barrel", "item_id": "62d3494175156700ce450dfd", "is bp": false}
+{"item": "Inaros Prime Chassis Blueprint", "count": 1, "item_slug": "inaros_prime_chassis_blueprint", "item_id": "5f0deab69f527b024d48f056", "is bp": false}
+{"item": "Inaros Prime Systems Blueprint", "count": 1, "item_slug": "inaros_prime_systems_blueprint", "item_id": "5f0deab79f527b024d48f059", "is bp": false}
+{"item": "Ivara Prime Chassis Blueprint", "count": 1, "item_slug": "ivara_prime_chassis_blueprint", "item_id": "5df8b0ab1456970087cd9b02", "is bp": false}
+{"item": "Khora Prime Chassis Blueprint", "count": 3, "item_slug": "khora_prime_chassis_blueprint", "item_id": "62d3493f75156700ce450ded", "is bp": false}
+{"item": "Khora Prime Neuroptics Blueprint", "count": 1, "item_slug": "khora_prime_neuroptics_blueprint", "item_id": "62d3494175156700ce450dff", "is bp": false}
+{"item": "Khora Prime Systems Blueprint", "count": 3, "item_slug": "khora_prime_systems_blueprint", "item_id": "62d3494175156700ce450e04", "is bp": false}
+{"item": "Knell Prime Receiver", "count": 1, "item_slug": "knell_prime_receiver", "item_id": "61bb64fe3132ff00482b5fd5", "is bp": false}
+{"item": "Larkspur Prime Stock", "count": 1, "item_slug": "larkspur_prime_stock", "item_id": "641263e07d179f02100c6d4a", "is bp": false}
+{"item": "Lavos Prime Chassis Blueprint", "count": 1, "item_slug": "lavos_prime_chassis_blueprint", "item_id": "67acd944125398d92c8bb4ed", "is bp": false}
+{"item": "Lavos Prime Neuroptics Blueprint", "count": 1, "item_slug": "lavos_prime_neuroptics_blueprint", "item_id": "67acd943125398d92c8bb4ec", "is bp": false}
+{"item": "Limbo Prime Systems Blueprint", "count": 1, "item_slug": "limbo_prime_systems_blueprint", "item_id": "5b2987abeb069f0536234279", "is bp": false}
+{"item": "Mesa Prime Systems Blueprint", "count": 1, "item_slug": "mesa_prime_systems_blueprint", "item_id": "5c182b749603780081b09a56", "is bp": false}
+{"item": "Mirage Prime Chassis Blueprint", "count": 1, "item_slug": "mirage_prime_chassis_blueprint", "item_id": "5a2feeb2c2c9e90cbdaa23d5", "is bp": false}
+{"item": "Mirage Prime Neuroptics Blueprint", "count": 2, "item_slug": "mirage_prime_neuroptics_blueprint", "item_id": "5a2feeb2c2c9e90cbdaa23d6", "is bp": false}
+{"item": "Mirage Prime Systems Blueprint", "count": 1, "item_slug": "mirage_prime_systems_blueprint", "item_id": "5a2feeb1c2c9e90cbdaa23d2", "is bp": false}
+{"item": "Nagantaka Prime Stock", "count": 1, "item_slug": "nagantaka_prime_stock", "item_id": "6242037666a58f0108c3d485", "is bp": false}
+{"item": "Nautilus Prime Carapace", "count": 2, "item_slug": "nautilus_prime_carapace", "item_id": "66c60c9066bbb2aedca695ab", "is bp": false}
+{"item": "Nautilus Prime Cerebrum", "count": 2, "item_slug": "nautilus_prime_cerebrum", "item_id": "66c60c9066bbb2aedca695aa", "is bp": false}
+{"item": "Nidus Prime Chassis Blueprint", "count": 1, "item_slug": "nidus_prime_chassis_blueprint", "item_id": "6139101a30dd5b004b7f90ad", "is bp": false}
+{"item": "Nova Prime Systems Blueprint", "count": 2, "item_slug": "nova_prime_systems_blueprint", "item_id": "54a73e65e779893a797fff6a", "is bp": false}
+{"item": "Nyx Prime Systems Blueprint", "count": 1, "item_slug": "nyx_prime_systems_blueprint", "item_id": "54a73e65e779893a797fff76", "is bp": false}
+{"item": "Octavia Prime SYstems", "count": 3, "item_slug": null, "item_id": null, "is bp": null}
+{"item": "Okina Prime Handle", "count": 1, "item_slug": "okina_prime_handle", "item_id": "663268d1e85cac3856c86dbf", "is bp": false}
+{"item": "Panthera Prime Barrel", "count": 1, "item_slug": "panthera_prime_barrel", "item_id": "5f0e0fdd9f527b0285718f1b", "is bp": false}
+{"item": "Paris Prime Upper Limb", "count": 1, "item_slug": "paris_prime_upper_limb", "item_id": "54a73e65e779893a797fff57", "is bp": false}
+{"item": "Phantasma Prime Receiver", "count": 1, "item_slug": "phantasma_prime_receiver", "item_id": "633e2e6cf570d10793afb824", "is bp": false}
+{"item": "Protea Prime Neuroptics Blueprint", "count": 3, "item_slug": "protea_prime_neuroptics_blueprint", "item_id": "66325cb1e85cac3856c86cc0", "is bp": false}
+{"item": "Protea Prime Systems Blueprint", "count": 2, "item_slug": "protea_prime_systems_blueprint", "item_id": "66325cb9e85cac3856c86cc4", "is bp": false}
+{"item": "Pyrana Prime Receiver", "count": 1, "item_slug": "pyrana_prime_receiver", "item_id": "5b2985e1eb069f04ea65b0ee", "is bp": false}
+{"item": "Quassus Prime Handle", "count": 1, "item_slug": "quassus_prime_handle", "item_id": "673516dfdb3ac2cfade14a7e", "is bp": false}
+{"item": "Revenant Prime Chassis Blueprint", "count": 1, "item_slug": "revenant_prime_chassis_blueprint", "item_id": "633e2e6af570d10793afb815", "is bp": false}
+{"item": "Rhino Prime Chassis Blueprint", "count": 1, "item_slug": "rhino_prime_chassis_blueprint", "item_id": "54a73e65e779893a797fff78", "is bp": false}
+{"item": "Rhino Prime Systems Blueprint", "count": 1, "item_slug": "rhino_prime_systems_blueprint", "item_id": "54a73e65e779893a797fff7f", "is bp": false}
+{"item": "Rubico Prime Barrel", "count": 1, "item_slug": "rubico_prime_barrel", "item_id": "5baa8bbf4567de01ac283493", "is bp": false}
+{"item": "Sevagoth Prime Neuroptics Blueprint", "count": 2, "item_slug": "sevagoth_prime_neuroptics_blueprint", "item_id": "66c6080366bbb2aedca6957d", "is bp": false}
+{"item": "Sevagoth Prime Systems Blueprint", "count": 3, "item_slug": "sevagoth_prime_systems_blueprint", "item_id": "66c6080366bbb2aedca6957f", "is bp": false}
+{"item": "Shade Prime Carapace", "count": 1, "item_slug": "shade_prime_carapace", "item_id": "641263e07d179f02100c6d4d", "is bp": false}
+{"item": "Shade Prime Systems Blueprint", "count": 1, "item_slug": null, "item_id": null, "is bp": null}
+{"item": "Sicarus PRime Barrel", "count": 1, "item_slug": null, "item_id": null, "is bp": null}
+{"item": "Sicarus Prime Receiver", "count": 1, "item_slug": "sicarus_prime_receiver", "item_id": "54a73e65e779893a797fff60", "is bp": false}
+{"item": "Strun Prime Barrel", "count": 1, "item_slug": "strun_prime_barrel", "item_id": "6139101a30dd5b004b7f90a7", "is bp": false}
+{"item": "Strun Prime Receiver", "count": 2, "item_slug": "strun_prime_receiver", "item_id": "6139101a30dd5b004b7f90a4", "is bp": false}
+{"item": "Strun PRime Stock", "count": 1, "item_slug": null, "item_id": null, "is bp": null}
+{"item": "Sybaris Prime Receiver", "count": 1, "item_slug": "sybaris_prime_receiver", "item_id": "592dd262011e88f094afec84", "is bp": false}
+{"item": "Titania Prime Neuroptics Blueprint", "count": 1, "item_slug": "titania_prime_neuroptics_blueprint", "item_id": "5e839494267539077b0dd6b8", "is bp": false}
+{"item": "Trinity PRime Neuroptics Blueprint", "count": 1, "item_slug": null, "item_id": null, "is bp": null}
+{"item": "Titania Prime Systems Blueprint", "count": 1, "item_slug": "titania_prime_systems_blueprint", "item_id": "5e839494267539077b0dd6b0", "is bp": false}
+{"item": "Trumna Prime Stock", "count": 1, "item_slug": "trumna_prime_stock", "item_id": "673516c9db3ac2cfade14a7a", "is bp": false}
+{"item": "Wisp Prime Chassis Blueprint", "count": 1, "item_slug": "wisp_prime_chassis_blueprint", "item_id": "64c2aa1466456704eba6ba2d", "is bp": false}
+{"item": "Wisp Prime Neuroptics Blueprint", "count": 1, "item_slug": "wisp_prime_neuroptics_blueprint", "item_id": "64c2aa1566456704eba6ba38", "is bp": false}
+{"item": "Wisp Prime SYstems", "count": 1, "item_slug": null, "item_id": null, "is bp": null}
+{"item": "Wukong Prime Chassis Blueprint", "count": 1, "item_slug": "wukong_prime_chassis_blueprint", "item_id": "5d21ce45f4604c012d1e0c0f", "is bp": false}
+{"item": "Euphone Prime Blueprint", "count": 1, "item_slug": null, "item_id": null, "is bp": null}
+{"item": "Fang Prime Blueprint", "count": 1, "item_slug": "fang_prime_blueprint", "item_id": "54a73e65e779893a797fff41", "is bp": true}
+{"item": "Fulmin Prime Blueprint", "count": 4, "item_slug": "fulmin_prime_blueprint", "item_id": "64c2aa1466456704eba6ba30", "is bp": true}
+{"item": "Gara Prime Blueprint", "count": 1, "item_slug": "gara_prime_blueprint", "item_id": "60ad4a1bf1904300d012c6ff", "is bp": true}
+{"item": "Garuda Prime Blueprint", "count": 1, "item_slug": "garuda_prime_blueprint", "item_id": "6242037866a58f0108c3d497", "is bp": true}
+{"item": "Guarss Prime Blueprint", "count": 6, "item_slug": null, "item_id": null, "is bp": null}
+{"item": "Glaive Prime Blueprint", "count": 3, "item_slug": "glaive_prime_blueprint", "item_id": "54a73e65e779893a797fff44", "is bp": true}
+{"item": "Guandao Prime Blueprint", "count": 2, "item_slug": "guandao_prime_blueprint", "item_id": "5f986cf99dbdce024971b0bb", "is bp": true}
+{"item": "Harrow Prime Blueprint", "count": 1, "item_slug": "harrow_prime_blueprint", "item_id": "61bb64fc3132ff00482b5fba", "is bp": true}
+{"item": "Hydroid Prime Blueprint", "count": 1, "item_slug": "hydroid_prime_blueprint", "item_id": "59a48b625cd9938cfede7038", "is bp": true}
+{"item": "Limbo Prime Blueprint", "count": 1, "item_slug": "limbo_prime_blueprint", "item_id": "5b2987aaeb069f0536234276", "is bp": true}
+{"item": "Mesa Prime Blueprint", "count": 2, "item_slug": "mesa_prime_blueprint", "item_id": "5c182b739603780081b09a55", "is bp": true}
+{"item": "Nami Skyla Prime Blueprint", "count": 1, "item_slug": "nami_skyla_prime_blueprint", "item_id": "59a5c2565cd9938cfede703f", "is bp": true}
+{"item": "Nikana Prime Blueprint", "count": 1, "item_slug": "nikana_prime_blueprint", "item_id": "56c3bbee5d2f0202da32e940", "is bp": true}
+{"item": "Oberon Prime Blueprint", "count": 1, "item_slug": "oberon_prime_blueprint", "item_id": "592dd262011e88f094afec7d", "is bp": true}
+{"item": "Paris Prime Blueprint", "count": 1, "item_slug": "paris_prime_blueprint", "item_id": "54a73e65e779893a797fff55", "is bp": true}
+{"item": "Protea PRime Blueprint", "count": 1, "item_slug": null, "item_id": null, "is bp": null}
+{"item": "Gunsen Prime Blueprint", "count": 2, "item_slug": "gunsen_prime_blueprint", "item_id": "64c2aa1466456704eba6ba2e", "is bp": true}
+{"item": "Reaper Prime Blueprint", "count": 1, "item_slug": "reaper_prime_blueprint", "item_id": "54a73e65e779893a797fff59", "is bp": true}
+{"item": "Revenant Prime Blueprint", "count": 1, "item_slug": "revenant_prime_blueprint", "item_id": "633e2e6cf570d10793afb827", "is bp": true}
+{"item": "Saryn Prime Blueprint", "count": 1, "item_slug": "saryn_prime_blueprint", "item_id": "56c3bbd55d2f0202da32e93b", "is bp": true}
+{"item": "Sevagoth Prime Blueprint", "count": 2, "item_slug": "sevagoth_prime_blueprint", "item_id": "66c6080266bbb2aedca6957c", "is bp": true}
+{"item": "Shade Prime Blueprint", "count": 1, "item_slug": "shade_prime_blueprint", "item_id": "641263e07d179f02100c6d42", "is bp": true}
+{"item": "Sicarus Prime Blueprint", "count": 1, "item_slug": "sicarus_prime_blueprint", "item_id": "54a73e65e779893a797fff5f", "is bp": true}
+{"item": "Silva and Aegis Prime Blueprint", "count": 1, "item_slug": null, "item_id": null, "is bp": null}
+{"item": "Soma Prime Blueprint", "count": 1, "item_slug": "soma_prime_blueprint", "item_id": "54a73e65e779893a797fff62", "is bp": true}
+{"item": "Titania Prime Blueprint", "count": 2, "item_slug": "titania_prime_blueprint", "item_id": "5e839495267539077b0dd6cc", "is bp": true}
+{"item": "Trumna Prime Blueprint", "count": 1, "item_slug": "trumna_prime_blueprint", "item_id": "673516c6db3ac2cfade14a77", "is bp": true}
+{"item": "Valkyr Prime Blueprint", "count": 1, "item_slug": "valkyr_prime_blueprint", "item_id": "583589fd2c2ada0047b386f6", "is bp": true}
+{"item": "Velox Prime Blueprint", "count": 1, "item_slug": "velox_prime_blueprint", "item_id": "663267c4e85cac3856c86db5", "is bp": true}
+{"item": "Volnus Prime Blueprint", "count": 1, "item_slug": "volnus_prime_blueprint", "item_id": "60ad4a1cf1904300d012c70c", "is bp": true}
+{"item": "Wyrm Prime Blueprint", "count": 1, "item_slug": "wyrm_prime_blueprint", "item_id": "54ca431ce779891a1adb4901", "is bp": true}
+{"item": "Yareli Prime Blueprint", "count": 1, "item_slug": "yareli_prime_blueprint", "item_id": "682dfa9835715d4f3e9c64e7", "is bp": true}
+{"item_name": "Epitaph Prime Set", "count": 1, "item_slug": "epitaph_prime_set", "item_id": "66c60c2766bbb2aedca695a3", "is_bp": false}
+{"item_name": "Harrow Prime Set", "count": 1, "item_slug": "harrow_prime_set", "item_id": "61bb64fc3132ff00482b5fbb", "is_bp": false}
+{"item_name": "Revenant Prime Set", "count": 1, "item_slug": "revenant_prime_set", "item_id": "633e2e6af570d10793afb81a", "is_bp": false}
