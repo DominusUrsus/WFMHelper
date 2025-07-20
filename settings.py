@@ -3,7 +3,7 @@ import csv, sys, requests, json, pandas as pd
 #Global Variables
 def init():
     global version
-    version = "0.0.9"
+    version = "0.1.0"
 
     global file_path
     file_path = f"{sys.argv[1]}"
@@ -22,6 +22,7 @@ def init():
     global set_list
     global set_root_item_id
     global bp_list
+    global typo_list
     
     item_dict = {}
     inv_list = []
@@ -34,3 +35,4 @@ def init():
     set_root_item_id = None
     set_data = None
     bp_list = []
+    typo_list = []

@@ -41,7 +41,8 @@ def get_item_id(item):
         print(f"KeyError: Column {e} not found in settings.items_df. Available columns: {settings.items_df.columns.tolist()}")
         return None
     except IndexError as e:
-        print(f"IndexError: Check for correct spelling of item: ({item}) in csv file? Error: {e}")
+        print(f"IndexError: Check for correct spelling of item: ({item}) in csv file? Adding to typo_list. Error: {e}")
+        settings.typo_list.append(item)
     except Exception as e:
         print(f"Error in get_item_id: {e}")
         return None
@@ -82,7 +83,7 @@ def get_blueprint_status(item):
 
 #iterate over settings.bp_list, call get_set_parts, for all sets that return true, call get_set_count
 def set_builder():
-    print(f"Debug: set_building running with list {settings.bp_list}")
+    #print(f"Debug: set_building running with list {settings.bp_list}")
     for slug_to_check in settings.bp_list:
         #print(f"Debug: Current check {slug_to_check}")
         if get_set_status(slug_to_check) == True:
@@ -95,12 +96,12 @@ def get_set_status(slug_to_check):
     try:
         #Get API data with rate limit
         api_set_request = settings.api_url +"item/" + slug_to_check + "/set"
-        print(f"Attempting get request to {api_set_request}")
+        #print(f"Attempting get request to {api_set_request}")
         settings.set_item_dump = requests.get(api_set_request)
         settings.set_item_dump.raise_for_status()
-        with open("wfm-set-item-dump.json", 'w') as file:
+        #with open("wfm-set-item-dump.json", 'w') as file:
             json.dump(settings.set_item_dump.json(), file, indent = 4)
-            print(f"Received set_item data. Storing data in wfm-set-item-dump.json")
+            #print(f"Received set_item data. Storing data in wfm-set-item-dump.json")
         #print(f"Debug set_item_dump dict: ")
     except TypeError:
         print("TypeError: Received TypeError for get_set_status: Likely a list in item_dict, debug later")
@@ -141,7 +142,7 @@ def get_set_status(slug_to_check):
 def get_set_parts(set_item_list, set_item_id):
     temp_name = None
     temp_slug = None
-    print(f"Debug: get_set_parts running with args: {set_item_list} + {set_item_id}")
+    #print(f"Debug: get_set_parts running with args: {set_item_list} + {set_item_id}")
     #Update settings.inv_list to reflect sets instead of individual parts
     for item_root in settings.set_data["data"]["items"]:
         if item_root["id"] == set_item_id:
@@ -166,7 +167,7 @@ def get_set_parts(set_item_list, set_item_id):
 
 #Call when set_builder resolves true, check amount of each item for the set we have in settings.inv_list
 def get_set_count(set_item_list):
-    print(f"Debug: running get_set_count")
+    #print(f"Debug: running get_set_count")
     min_count = 1000
     list_to_del = []
     item_sets = {}
@@ -202,17 +203,37 @@ def get_set_count(set_item_list):
     
     for part_dict in list_to_del:
         settings.inv_list.remove(part_dict)
-    return min_count if min_count != 1000 else 1
+    return min_count if min_count != 1000 else 0
 
 def get_item_value(item):
     pass
 
 #Function to append "Blueprint" to wf strings that do not include it
-def correct_item_name (item):
+def correct_item_name(item):
     correct_string = item.split()
     correct_string.append ("Blueprint")
     result = " ".join(correct_string)
     #print(f"Debug: correct_item_name running - correct string: {result}")
+    return result
+
+def correct_melee_name(item):
+    #print(f"Debug: Running correct_melee_name on item: {item}")
+    correct_string = item.split()
+    result = ""
+    if "and" in correct_string:
+        correct_string.remove("and")
+        correct_string.insert(1, "&")
+        result = " ".join(correct_string)
+        #print(f"Debug: Correcting Melee Name: {result}")
+        return result.title()
+    else:
+        print(f"correct_melee_name failed on item: {item} with result: {result}\nExiting.")
+        sys.exit(1)
+
+def correct_spacing(item):
+    correct_string = item.split()
+    result = " ".join(correct_string)
+    #print(f"Debug: Corrected string: {result}")
     return result
 
 #Open and parse csv file given as argument + create a global inventory
@@ -226,12 +247,22 @@ def csv_parser(file_path):
 
         #Name fixer causes sentinels to break
         prime_parts_key = ["Chassis", "Neuroptics", "Systems"]
+        sentinel_check = ["Carrier", "Dethcube", "Diriga", "Djinn", "Helios", "Nautilus", "Oxylus", "Shade", "Taxon", "Wyrm"]
+        sword_board_check = ["silva", "aegis", "cobra", "crane"]
+
         for row in reader:
-            #Checking if WF parts names contain Blueprint
-            if any(keyword in row[0] for keyword in prime_parts_key) and "blueprint" not in row[0]:
+
+            if any(sent_name in row[0].title() for sent_name in sentinel_check):
+                #print(f"Debug: Detected Sentinel Part for {row[0]} in CSV")
+                item_name = row[0].title().lstrip()
+            elif any(keyword in row[0].title() for keyword in prime_parts_key) and "blueprint" not in row[0]:
+                #print(f"Debug: Detected Warframe part without blueprint for part: {row[0]}, appending.")
                 item_name = correct_item_name(row[0].title())
+            elif any(melee_name in row[0].lower() for melee_name in sword_board_check):
+                #print(f"Debug: Detected Sword and Shield Melee for {row[0]} in CSV")
+                item_name = correct_melee_name(row[0].lower())
             else:
-                item_name = row[0].title()
+                item_name = row[0].title().lstrip()
 
             #CSV Returns each row as a list, index and add values to keys based on info
             settings.item_dict = {
@@ -254,10 +285,13 @@ def main():
     print(f"----------Checking inventory with path: {settings.file_path} -----------")
     csv_parser(settings.file_path)
     print("---------------------- Inventory parsed ---------------------")
+
     print("---------------------- Checking for sets --------------------")
     set_builder()
     print("----------------- Completed. Outputting file. ---------------")
+
     output_file = open("test_output.json", "w", encoding='utf-8')
+    json.dumps(settings.typo_list)
     for line in settings.inv_list:
         json.dump(line, output_file)
         output_file.write("\n")
