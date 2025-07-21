@@ -3,7 +3,7 @@ import csv, sys, requests, json, pandas as pd
 #Global Variables
 def init():
     global version
-    version = "0.1.0"
+    version = "1.0.0"
 
     global file_path
     file_path = f"{sys.argv[1]}"
@@ -15,6 +15,7 @@ def init():
     global inv_list
     global wfm_api_version
     global wfm_api_item_dump
+    global wfm_api_value_dump
     global set_item_dump
     global items_df
     global json_path
@@ -28,9 +29,10 @@ def init():
     inv_list = []
     wfm_api_version = ""
     wfm_api_item_dump = ""
+    wfm_api_value_dump = ""
     set_item_dump = {}
     items_df = []
-    json_path = "./wfm-api-item-dump.json"
+    json_path = "./json_files/"
     set_list = []
     set_root_item_id = None
     set_data = None
