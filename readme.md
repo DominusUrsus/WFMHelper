@@ -19,6 +19,6 @@ Dependencies:
 pandas (pip install pandas)
 Input file should be a csv file.
 
-To use: run "python3 main.py (path to file)" within wfmhelper directory.
+To use: run "python3 main.py (pathtofile.csv)" within wfmhelper directory.
 Returns two lists as sell_output and vendor_list, with name, count, plat, and ducat values.
 Test files are in test csv files.
